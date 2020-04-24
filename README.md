@@ -1,4 +1,4 @@
-# react-viewport-observer
+# react-in-viewport-observer
 
 Wrapper component that uses intersection observer api to tell you when your component is in the viewport. Intersection information is needed for many reasons, such as:
 
@@ -13,7 +13,7 @@ Wrapper component that uses intersection observer api to tell you when your comp
 
 #### Props
 
-`rootMargin` - Margin around the root (Default "0px 0px 0px 0px" (top, right, bottom, left))
+`rootMargin` - Margin around the root (Default "0px 0px 0px 0px" (top, right, bottom, left))\r\n
 `threshold` - Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed.
 
 More information can be found in https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API

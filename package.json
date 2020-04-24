@@ -1,5 +1,5 @@
 {
-  "name": "react-viewport-observer",
+  "name": "react-in-viewport-observer",
   "version": "1.0.0",
   "description": "Wrapper component that uses intersection observer api to tell you when your component is in the viewport ",
   "main": "index.js",
