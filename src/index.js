@@ -14,7 +14,7 @@ const intersectionObserverSupport =
 class ViewportObserver extends Component {
   static defaultProps = {
     rootMargin: "0px 0px 0px 0px",
-    threshold: 1.0
+    threshold: 0,
   };
 
   constructor(props) {

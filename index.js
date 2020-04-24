@@ -136,7 +136,7 @@ var ViewportObserver = /*#__PURE__*/function (_Component) {
 
 _defineProperty(ViewportObserver, "defaultProps", {
   rootMargin: "0px 0px 0px 0px",
-  threshold: 1.0
+  threshold: 0
 });
 
 var _default = ViewportObserver;
