@@ -23,8 +23,7 @@ https://bundlephobia.com/result?p=react-in-viewport-observer
 ## Installing
 
 ```
-npm i --save react-viewport-intersection-observer
-
+npm i --save react-in-viewport-observer
 ```
 
 ## Usage
