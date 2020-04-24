@@ -13,8 +13,8 @@ const intersectionObserverSupport =
 
 class ViewportObserver extends Component {
   static defaultProps = {
-    xOffset: "0px",
-    yOffset: "0px",
+    rootMargin: "0px 0px 0px 0px",
+    threshold: 1.0,
   };
 
   constructor(props) {
@@ -53,7 +53,8 @@ class ViewportObserver extends Component {
   addObserver() {
     if (!this.observer && intersectionObserverSupport) {
       this.observer = new IntersectionObserver(this.isIntersecting, {
-        rootMargin: `0px ${this.props.xOffset} ${this.props.yOffset} 0px`,
+        rootMargin: this.props.rootMargin,
+        threshold: this.props.threshold,
       });
       this.observer.observe(this.node);
     }
