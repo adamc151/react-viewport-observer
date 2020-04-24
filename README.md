@@ -18,7 +18,7 @@ Intersection information is needed for many reasons, such as:
 1.5kB MINIFIED + GZIPPED
 ```
 
-https://bundlephobia.com/result?p=react-in-viewport-observer@1.0.3
+https://bundlephobia.com/result?p=react-in-viewport-observer
 
 ## Installing
 
