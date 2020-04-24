@@ -11,6 +11,13 @@ Intersection information is needed for many reasons, such as:
 - Reporting of visibility of advertisements in order to calculate ad revenues.
 - Deciding whether or not to perform tasks or animation processes based on whether or not the user will see the result.
 
+## Package Size
+
+- 3.8kB MINIFIED
+- 1.5kB MINIFIED + GZIPPED
+
+https://bundlephobia.com/result?p=react-in-viewport-observer@1.0.3
+
 ## Installing
 
 ```
