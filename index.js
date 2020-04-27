@@ -35,11 +35,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-/*
-If Window DOES NOT exist (Server side) return false
-If Window exists (Client side) return result of IntersectionObserver check
-*/
-var intersectionObserverSupport = typeof window !== "undefined" ? "IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype : false;
+//Check if intersection observer is supported
+var isSupported = typeof window !== "undefined" ? "IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype : false;
 
 var ViewportObserver = /*#__PURE__*/function (_Component) {
   _inherits(ViewportObserver, _Component);
@@ -65,8 +62,7 @@ var ViewportObserver = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.setState({
-        /* If Intersection Observer NOT supported - set state hasIntersected straight away */
-        hasIntersected: !intersectionObserverSupport
+        hasIntersected: !isSupported
       });
       this.addObserver();
     }
@@ -88,12 +84,12 @@ var ViewportObserver = /*#__PURE__*/function (_Component) {
   }, {
     key: "UNSAFE_componentWillReceiveProps",
     value: function UNSAFE_componentWillReceiveProps() {
-      this.addObserver(); //reset
+      this.addObserver();
     }
   }, {
     key: "addObserver",
     value: function addObserver() {
-      if (!this.observer && intersectionObserverSupport) {
+      if (!this.observer && isSupported) {
         this.observer = new IntersectionObserver(this.isIntersecting, {
           rootMargin: this.props.rootMargin,
           threshold: this.props.threshold

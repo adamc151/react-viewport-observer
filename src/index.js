@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 
-/*
-If Window DOES NOT exist (Server side) return false
-If Window exists (Client side) return result of IntersectionObserver check
-*/
-const intersectionObserverSupport =
+//Check if intersection observer is supported
+const isSupported =
   typeof window !== "undefined"
     ? "IntersectionObserver" in window &&
       "IntersectionObserverEntry" in window &&
@@ -29,8 +26,7 @@ class ViewportObserver extends Component {
 
   componentDidMount() {
     this.setState({
-      /* If Intersection Observer NOT supported - set state hasIntersected straight away */
-      hasIntersected: !intersectionObserverSupport,
+      hasIntersected: !isSupported,
     });
     this.addObserver();
   }
@@ -47,11 +43,11 @@ class ViewportObserver extends Component {
   }
 
   UNSAFE_componentWillReceiveProps() {
-    this.addObserver(); //reset
+    this.addObserver();
   }
 
   addObserver() {
-    if (!this.observer && intersectionObserverSupport) {
+    if (!this.observer && isSupported) {
       this.observer = new IntersectionObserver(this.isIntersecting, {
         rootMargin: this.props.rootMargin,
         threshold: this.props.threshold,
