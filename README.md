@@ -38,7 +38,7 @@ const Component = () => {
   return (
     <ViewportObserver>
       {(intersected) => {
-        return <div>My Lazy loaded component</div>;
+        return intersected && <div>My Lazy loaded component</div>;
       }}
     </ViewportObserver>
   );
